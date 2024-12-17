@@ -43,6 +43,10 @@ ollama pull llama3.2
 ```bash
 python -m main.py <pdf_file_path> 
 ```
+or 
+```bash
+poetry run python main.py <pdf_file_path>
+```
 
 or use the streamlit app to select a file:
 ```bash
