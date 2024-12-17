@@ -33,7 +33,8 @@ def generate_summary(llm, combined_text) -> str:
 def handle_summary_generation(combined_text):
     if st.button("Generate Summary"):
         llm = load_llm()
-        message = generate_summary(llm, combined_text)
+        with st.spinner("Generating summary..."):
+            message = generate_summary(llm, combined_text)
         display_summary(message)
 
 
