@@ -12,6 +12,7 @@ A tool that uses AI to generate summaries from PDF documents.
 
 - Python 3.12 or higher
 - [Ollama](https://www.ollama.com)
+- [Poetry](https://python-poetry.org) (Optional)
 - Required dependencies:
     - python
     - langchain
@@ -29,6 +30,10 @@ git clone
 2. Install dependencies:
 ```bash
 pip install -r requirements.txt 
+```
+or
+```bash
+poetry install
 ```
 3. Install an Ollama model:
 ```bash

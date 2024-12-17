@@ -4,6 +4,7 @@ import tempfile
 from file_loader import load
 from langchain_ollama import ChatOllama
 
+
 def create_temp_file(uploaded_file) -> str:
     """Create a temporary file from the uploaded file."""
     with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as tmp_file:
@@ -21,11 +22,13 @@ def load_llm():
 
 
 def generate_summary(llm, combined_text):
-    with st.spinner('Generating summary...'):
-        summary_prompt = f"Please provide a concise summary of the following text: {combined_text}"
+    with st.spinner("Generating summary..."):
+        summary_prompt = (
+            f"Please provide a concise summary of the following text: {combined_text}"
+        )
         message = llm.invoke(summary_prompt)
         return message
-    
+
 
 def display_summary(message):
     st.subheader("Summary")
@@ -50,7 +53,7 @@ def setup_page():
 
 
 def process_pdf(tmp_file_path):
-    with st.spinner('Processing PDF...'):
+    with st.spinner("Processing PDF..."):
         pages = load(tmp_file_path)
         combined_text = merge(pages)
         st.info(f"Successfully processed {len(pages)} pages")
@@ -77,6 +80,7 @@ def main():
             st.error(f"An error occurred: {str(e)}")
         finally:
             os.unlink(tmp_file_path)
+
 
 if __name__ == "__main__":
     main()
