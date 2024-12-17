@@ -41,5 +41,5 @@ python -m main.py <pdf_file_path>
 
 or use the streamlit app to select a file:
 ```bash
-python -m main.py <pdf_file_path> 
+streamlit run app.py 
 ```
