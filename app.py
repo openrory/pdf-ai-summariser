@@ -3,6 +3,7 @@ import os
 import tempfile
 from file_loader import load, process_pdf, merge
 from langchain_ollama import ChatOllama
+from langchain_core.messages import BaseMessage
 
 
 def create_temp_file(uploaded_file) -> str:
@@ -21,13 +22,12 @@ def load_llm():
     )
 
 
-def generate_summary(llm, combined_text) -> str:
-    with st.spinner("Generating summary..."):
-        summary_prompt = (
-            f"Please provide a concise summary of the following text: {combined_text}"
-        )
-        message = llm.invoke(summary_prompt)
-        return message
+def generate_summary(llm, combined_text) -> BaseMessage:
+    summary_prompt = (
+        f"Please provide a concise summary of the following text: {combined_text}"
+    )
+    message = llm.invoke(summary_prompt)
+    return message
 
 
 def handle_summary_generation(combined_text):
