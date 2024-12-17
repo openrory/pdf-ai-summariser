@@ -2,7 +2,6 @@ import streamlit as st
 import os
 import tempfile
 from file_loader import load
-from langchain_community.document_loaders import PyPDFLoader
 from langchain_ollama import ChatOllama
 
 def create_temp_file(uploaded_file) -> str:

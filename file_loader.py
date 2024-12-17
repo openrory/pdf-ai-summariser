@@ -1,5 +1,4 @@
 from langchain_community.document_loaders import PyPDFLoader
-import sys
 
 def load(file_path: str) -> list:
     pages = []
