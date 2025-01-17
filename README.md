@@ -12,14 +12,7 @@ A tool that uses AI to generate summaries from PDF documents.
 
 - Python 3.12 or higher
 - [Ollama](https://www.ollama.com)
-- [Poetry](https://python-poetry.org) (Optional)
-- Required dependencies:
-    - python
-    - langchain
-    - langchain-ollama
-    - pypdf
-    - streamlit
-    - langchain-community
+- [uv](https://docs.astral.sh/uv/) (Optional)
 
 ## Installation
 
@@ -27,15 +20,29 @@ A tool that uses AI to generate summaries from PDF documents.
 ```bash
 git clone 
 ```
-2. Install dependencies:
+
+2. Create a virtual environment:
+```bash
+python -m venv /path/to/new/virtual/environment
+```
+or
+```bash
+uv venv
+```
+and activate:
+```bash
+source .venv/bin/active
+```
+
+3. Install dependencies:
 ```bash
 pip install -r requirements.txt 
 ```
 or
 ```bash
-poetry install
+uv pip install --requirements requirements.txt
 ```
-3. Install an Ollama model:
+4. Install an Ollama model:
 ```bash
 ollama pull llama3.2
 ```
