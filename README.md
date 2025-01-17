@@ -57,5 +57,5 @@ uv run python main.py <pdf_file_path>
 
 or use the streamlit app to select a file:
 ```bash
-streamlit run app.py 
+streamlit run src/app.py 
 ```
