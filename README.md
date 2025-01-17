@@ -59,3 +59,7 @@ or use the streamlit app to select a file:
 ```bash
 streamlit run src/app.py 
 ```
+or 
+```bash
+uv run streamlit run src/app.py
+```
